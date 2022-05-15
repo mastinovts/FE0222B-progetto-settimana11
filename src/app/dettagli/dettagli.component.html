@@ -1,0 +1,11 @@
+<div *ngIf="product">
+    <h2 class="m-4">{{ product.name }}</h2>
+    <img src="{{product.immagine}}" alt="" style="width: 100px;" class="mx-2">
+    <img src="{{product.immagine1}}" alt="" style="width: 100px;" class="mx-2">
+    <img src="{{product.immagine2}}" alt="" style="width: 100px;" class="mx-2">
+    <img src="{{product.immagine3}}" alt="" style="width: 100px;" class="mx-2">
+    <h4>{{ product.price | currency }}</h4>
+    <p class="w-25">{{ product.description }}</p>
+</div>
+<button type="button" class="btn btn-sm btn-warning mx-3" (click)="addToCart(product)">Aggiungi al carrello</button>
+<button type="button" class="btn btn-sm btn-warning" [routerLink]="'/'">Torna allo Shop</button>

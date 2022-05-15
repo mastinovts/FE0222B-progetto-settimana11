@@ -1,0 +1,15 @@
+<h1 class="text-center mt-3 mb-5">Migliori Smartphone 2022</h1>
+
+
+<div class="col-4" *ngFor="let product of products">
+    <div class="m-3">
+        <h3 class="card-title col-md-3 w-100">
+            {{product.name}}
+        </h3>
+        <img src="{{product.immagine}}" alt="" class="card-body" style="width: 150px;">
+        <button type="button" class="btn btn-sm btn-warning m-2" (click)="addToCart(product)">Aggiungi al carrello</button>
+        <button class="btn btn-sm btn-warning m-2" [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+            Dettagli
+              </button>
+    </div>
+</div>

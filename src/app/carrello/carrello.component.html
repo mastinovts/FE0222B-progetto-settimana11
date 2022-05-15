@@ -1,0 +1,30 @@
+<h3 class="mb-5 mt-3" style="color: blue; font-size: x-large;">Il tuo carrello</h3>
+
+<div class="container">
+    <p class="cartProduct w-25 d-flex justify-content-between" style="background-color: yellow;" *ngFor="let item of items">
+        <span class="mx-4">{{ item.name }} </span>
+        <span class="mx-2"> {{ item.price | currency }}</span>
+    </p>
+</div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+    <div class="form m-2">
+        <div>
+            <label for="name">
+        Nome
+      </label>
+            <input id="name" type="text" formControlName="name" class="mx-4 my-3">
+        </div>
+
+        <div>
+            <label for="address">
+        Indirizzo
+      </label>
+            <input id="address" type="text" formControlName="address" class="mx-2">
+        </div>
+
+        <button class="btn btn-sm btn-warning mt-3" type="submit">Completa acquisto</button>
+        <button type="button" class="btn btn-sm btn-warning mt-3 mx-2" [routerLink]="'/'">Torna allo Shop</button>
+    </div>
+
+</form>
